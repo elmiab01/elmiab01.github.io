@@ -32,9 +32,14 @@ nav {
 <body>
 <script type="text/javascript">
   counter=o
+  updateCounter= function() {
+  counter= counter+1
+  countspot = document.queryselectecter ("mycounter");
+  countspot.innerHTML = "correct" + counter;
+  }
 </script>
 <nav>
-<input type="checkbox">
+<input type="checkbox" onclick="updatecounter();">
 <section class=answer>
   <p>the unstable scurity system in middle-east</p>
 </section>
