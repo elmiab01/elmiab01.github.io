@@ -1,0 +1,64 @@
+<html>
+<style>
+nav {
+  position: relative;
+  float: left;
+  width: 300px;
+  margin: 20px;
+}
+  section{
+    position: absolute;
+  height: 175px;
+  width: 100px;
+  border : 2px solid;
+  border-radius: 10px;
+  top: 20px;
+  left: 80px;
+  }
+  .question {
+    position: absolute;
+    background-color: red;
+  }
+  .answer {
+    background-color: green;
+    z-index: -1;
+  }
+   nav:hover .question {
+     display: none;
+  }
+  input {position: relative;
+  top: 200px;
+  width: 250px;
+  }
+  input:checked ~ .question 
+</style>
+<body>
+<nav>
+<section class="answer">
+  what the the human brain looks like?
+</section>
+<input type='checkbox'>
+<section class="question">
+  google it
+</section>
+</nav>
+<nav>
+<section class="answer">
+  what is the main phrases we used in computure class?
+</section>
+<input type='checkbox'>
+<section class="question">
+hello world
+</section>
+</nav>
+<nav>
+<section class="answer">
+  what is the mean to be human?
+</section>
+<input type='checkbox'>
+<section class="question">
+  go to paidia class
+</section>
+</nav>
+</body>
+</html>
