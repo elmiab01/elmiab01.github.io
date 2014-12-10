@@ -1,31 +1,30 @@
-<html>
+html>
 <header>
-	<h1>shopping list </h1>
-
+	<h1> shopping list</h1>
+	<link rel="stylesheet" href="style.css" type="css">
 </header>
 
 <body>
 
 
 <main>
-<ul id=helloworld>
+<ul id=hellworld>
 	</ul>
 </main>
 <aside>
 	
-	<label for="helloworld1">Enter Task</label>
-	<input type="text" id="helloworld1" size=40 value="">
+	<label for="helloworld2">Enter Task</label>
+	<input type="text" id="helloworld2" size=40 value="">
 	<button onclick="addTask()"> Add Task </button>
 	
 	<select id="important">
-    	<option>very important</option>
-    	<option>important</option>
-    	<option>not important </option>
+    	<option>High</option>
+    	<option>Medium</option>
+    	<option>Low</option>
 	</select>
 </aside>
 
 <script type="text/javascript">
-
 doneTask = function() {
 	if (this.checked){
 	this.parentNode.classList.add("done");
@@ -43,7 +42,6 @@ localSave = function() {
 		res.push(allEntries[i].innerText);
 		}
 	}
-
 	localStorage.setItem("todoDatabase",JSON.stringify(res))
 }
 restoreTask = function () {
@@ -62,11 +60,10 @@ restoreTask = function () {
 	}
 	
 }
-
 addTask= function() {
 	var newli;
-	i = document.querySelector("#helloworld1");
-	bl = document.querySelector("#helloworld");
+	i = document.querySelector("#helloworld2");
+	bl = document.querySelector("helloworld");
 	priorityValue= document.querySelector("#important").value;
 	iText = i.value;
 	li = document.createElement('li');
@@ -82,7 +79,6 @@ addTask= function() {
 	i.value = "";
 localSave ()
 	
-
 }
 window.onload = restoreTask;
 </script>
