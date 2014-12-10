@@ -29,7 +29,7 @@
 	<input type="text" id="taskbox" size=40 value="">
 	<button onclick="addTask()"> Add Task </button>
 	
-	<select id="priority">
+	<select id="important">
     	<option>High</option>
     	<option>Medium</option>
     	<option>Low</option>
@@ -79,10 +79,10 @@ addTask= function() {
 	var newli;
 	i = document.querySelector("#taskbox");
 	bl = document.querySelector("#helloworld");
-	priorityValue= document.querySelector("#priority").value;
+	priorityValue= document.querySelector("#important").value;
 	iText = i.value;
 	li = document.createElement('li');
-	li.className = priorityValue;
+	li.className = importantValue;
 	cb= document.createElement("input");
 	cb.type = 'checkbox';
 	cb.onclick = doneTask;	
