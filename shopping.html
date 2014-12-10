@@ -1,1 +1,91 @@
+<html>
+<header>
+	<h1> </h1>
+	<link rel="stylesheet" href="style.css" type="css">
+</header>
+
+<body>
+
+
+<main>
+<ul id=helloworld>
+	</ul>
+</main>
+<aside>
+	
+	<label for="helloworld1">Enter Task</label>
+	<input type="text" id="helloworld1" size=40 value="">
+	<button onclick="addTask()"> Add Task </button>
+	
+	<select id="important">
+    	<option>very important</option>
+    	<option>important</option>
+    	<option>not important </option>
+	</select>
+</aside>
+
+<script type="text/javascript">
+
+doneTask = function() {
+	if (this.checked){
+	this.parentNode.classList.add("done");
+	}else {
+		this.parentNode.classList.remove("done");
+		}
+	localSave()
+}
+localSave = function() {
+	var res = []
+	var i;
+	allEntries = document.querySelectorAll('li')
+	for(i=0; i < allEntries.length; i++) {
+		if (! allEntries[i].classList.contains("done")) {
+		res.push(allEntries[i].innerText);
+		}
+	}
+
+	localStorage.setItem("todoDatabase",JSON.stringify(res))
+}
+restoreTask = function () {
+	allEntries = JSON.parse(localStorage.getItem('todoDatabase'))
+	for (i=0; i < allEntries.length; i++){
+	
+	bl = document.querySelector("#helloworld");
+	li = document.createElement('li');
+	cb= document.createElement("input");
+	cb.type = 'checkbox';
+	cb.onclick = doneTask;	
+	li.appendChild(cb);
+	t= document.createTextNode(allEntries[i]);
+	li.appendChild(t);
+	bl.appendChild(li);
+	}
+	
+}
+
+addTask= function() {
+	var newli;
+	i = document.querySelector("#helloworld1");
+	bl = document.querySelector("#helloworld");
+	priorityValue= document.querySelector("#important").value;
+	iText = i.value;
+	li = document.createElement('li');
+	li.className = priorityValue;
+	cb= document.createElement("input");
+	cb.type = 'checkbox';
+	cb.onclick = doneTask;	
+	li.appendChild(cb);
+	t= document.createTextNode(iText);
+	li.appendChild(t);
+	bl.appendChild(li);
+	
+	i.value = "";
+localSave ()
+	
+
+}
+window.onload = restoreTask;
+</script>
+</body>
+</html>
 
