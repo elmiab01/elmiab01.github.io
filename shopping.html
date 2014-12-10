@@ -11,33 +11,96 @@
        body{background-image: url("http://snap.nal.usda.gov/sites/snap.nal.usda.gov/files/photo-gallery/low-res/shopping_2.jpg")
        }
       </style>
-   </head>
-   <input type=text onclick=""
-   <botton onclick="addlist();">add</botton>
-     additem = function() {
-        myUL= document.querySelector(#shoppingList);
-        myTextBox= document,querySelector('#shoppingList');
-        myLi= document.createElement('l:');
-        mygrocey= document createTextNode(mytextBox.value);
-        myLi.appendchild(myshopping);
-        myUl.appendchild(myli);
-        myTextBox.value="";
-        }
-   <body
-        <Ul>
-        <Ul class="meat"><td>Beef</td><td>$10.00</td></tr>
-        <Ul class="meat"><td>pork</td><td>$5.00</td></tr>
-        <Ul class="meat"><td>lame</td><td>$20.00</td></tr>
-        <Ul class="meat"><td>Hotdog</td><td>$13.00</td></tr>
-        <Ul class="meat"><td>camels meat</td><td>$50.00</td></tr>
-        <Ul class="vegetable"><td>tomato</td><td>$10</td></tr>
-        <Ul class="vegetable"><td>potato</td><td>$10</td></tr>
-        <Ul class="vegetable"><td>latters</td><td>$10</td></tr>
-        <Ul class="vegetable"><td>chile</td><td>$10</td></tr>
-        <Ul class="vegetable"><td>salad</td><td>$10</td></tr>
-        <Ul class="vegetable"><td>olver</td><td>$10</td></tr>
-        
-        </Ul>
-        
+    
+<header>
+	<h1> </h1>
+	<link rel="stylesheet" href="style.css" type="css">
+</header>
+
+<body>
+
+<main>
+<ul id=helloworld>
+	</ul>
+</main>
+<aside>
+	
+	<label for="taskbox">Enter Task</label>
+	<input type="text" id="taskbox" size=40 value="">
+	<button onclick="addTask()"> Add Task </button>
+	
+	<select id="priority">
+    	<option>High</option>
+    	<option>Medium</option>
+    	<option>Low</option>
+	</select>
+</aside>
+
+<script type="text/javascript">
+
+doneTask = function() {
+	if (this.checked){
+	this.parentNode.classList.add("done");
+	}else {
+		this.parentNode.classList.remove("done");
+		}
+	localSave()
+}
+localSave = function() {
+	var res = []
+	var i;
+	allEntries = document.querySelectorAll('li')
+	for(i=0; i < allEntries.length; i++) {
+		if (! allEntries[i].classList.contains("done")) {
+		res.push(allEntries[i].innerText);
+		}
+	}
+
+	localStorage.setItem("todoDatabase",JSON.stringify(res))
+}
+restoreTask = function () {
+	allEntries = JSON.parse(localStorage.getItem('todoDatabase'))
+	for (i=0; i < allEntries.length; i++){
+	
+	bl = document.querySelector("#helloworld");
+	li = document.createElement('li');
+	cb= document.createElement("input");
+	cb.type = 'checkbox';
+	cb.onclick = doneTask;	
+	li.appendChild(cb);
+	t= document.createTextNode(allEntries[i]);
+	li.appendChild(t);
+	bl.appendChild(li);
+	}
+	
+}
+
+addTask= function() {
+	var newli;
+	i = document.querySelector("#taskbox");
+	bl = document.querySelector("#helloworld");
+	priorityValue= document.querySelector("#priority").value;
+	iText = i.value;
+	li = document.createElement('li');
+	li.className = priorityValue;
+	cb= document.createElement("input");
+	cb.type = 'checkbox';
+	cb.onclick = doneTask;	
+	li.appendChild(cb);
+	t= document.createTextNode(iText);
+	li.appendChild(t);
+	bl.appendChild(li);
+	
+	i.value = "";
+localSave ()
+	
+
+}
+window.onload = restoreTask;
+</script>
+</body>
+</html>
+
+  </head>
    </body>
 </html>
