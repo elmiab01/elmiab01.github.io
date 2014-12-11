@@ -28,7 +28,14 @@ font-size: 30pt;
 		this.parentNode.classList.remove("done");
 		}
 
-
+localSave = function() {
+	var res = []
+	var i;
+	allEntries = document.querySelectorAll('li')
+	for(i=0; i < allEntries.length; i++) {
+		if (! allEntries[i].classList.contains("done")) {
+		res.push(allEntries[i].innerText);
+		}
 </script>
 </body>
 </html>
