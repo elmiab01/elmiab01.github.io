@@ -35,20 +35,7 @@ font-size: 30pt;
 	}else {
 		this.parentNode.classList.remove("done");
 		}
-		restoreTask = function () {
-	allEntries = JSON.parse(localStorage.getItem('todoDatabase'))
-	for (i=0; i < allEntries.length; i++){
 	
-	bl = document.querySelector("#busylist");
-	li = document.createElement('li');
-	cb= document.createElement("input");
-	cb.type = 'checkbox';
-	cb.onclick = doneTask;	
-	li.appendChild(cb);
-	t= document.createTextNode(allEntries[i]);
-	li.appendChild(t);
-	bl.appendChild(li);
-	}
 addTask= function() {
 	var newli;
 	i = document.querySelector("#");
