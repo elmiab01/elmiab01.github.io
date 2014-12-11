@@ -21,6 +21,12 @@ font-size: 30pt;
              </select>
              </aside>
  <script type="text/javascript">
+ doneTask = function() {
+	if (this.checked){
+	this.parentNode.classList.add("done");
+	}else {
+		this.parentNode.classList.remove("done");
+		}
 
          myUl.appendchild(myli);
          myTextBox.value="";
