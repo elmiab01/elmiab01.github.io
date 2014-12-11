@@ -36,24 +36,6 @@ font-size: 30pt;
 		this.parentNode.classList.remove("done");
 		}
 	
-addTask= function() {
-	var newli;
-	i = document.querySelector("#");
-	bl = document.querySelector("#helloworld");
-	priorityValue= document.querySelector("#important").value;
-	iText = i.value;
-	li = document.createElement('li');
-	li.className = priorityValue;
-	cb= document.createElement("input");
-	cb.type = 'checkbox';
-	cb.onclick = doneTask;	
-	li.appendChild(cb);
-	t= document.createTextNode(iText);
-	li.appendChild(t);
-	bl.appendChild(li);
-	
-	i.value = "";
-
 </script>
 </body>
 </html>
