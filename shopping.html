@@ -10,16 +10,24 @@ font-size: 30pt;
           background-image: url("https://visualsonline.cancer.gov/retrieve.cfm?imageid=2397&dpi=300&fileformat=jpg")
 }
 </style>
+
     
-       <aside>
-          <label for="textbox">Enter Task</label>
-        <input type="text" id="texbox" size="45" value="">
-        <button onclick="add()"> Add Task </button>
-          <select id="important">
-             <option>High</option>
-             <option>Medium</option>
-             </select>
-             </aside>
+      <main>
+<ul id=helloworld>
+	</ul>
+</main>
+<aside>
+	
+	<label for="taskbox">Enter Task</label>
+	<input type="text" id="taskbox" size=40 value="">
+	<button onclick="addTask()"> Add Task </button>
+	
+	<select id="important">
+    	<option>High</option>
+    	<option>Medium</option>
+    	<option>Low</option>
+	</select>
+</aside>
  <script type="text/javascript">
  doneTask = function() {
 	if (this.checked){
@@ -28,14 +36,7 @@ font-size: 30pt;
 		this.parentNode.classList.remove("done");
 		}
 
-localSave = function() {
-	var res = []
-	var i;
-	allEntries = document.querySelectorAll('li')
-	for(i=0; i < allEntries.length; i++) {
-		if (! allEntries[i].classList.contains("done")) {
-		res.push(allEntries[i].innerText);
-		}
+
 </script>
 </body>
 </html>
