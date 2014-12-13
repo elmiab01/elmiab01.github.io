@@ -18,8 +18,8 @@
 </main>
 <aside>
 	
-	<label for="taskbox">Enter Task</label>
-	<input type="text" id="taskbox" size=40 value="">
+	<label for="booki">Enter Task</label>
+	<input type="text" id="booki" size=40 value="">
 	<button onclick="addTask()"> Add Task </button>
 	
 	<select id="priority">
@@ -67,7 +67,7 @@ restoreTask = function () {
 }
 addTask= function() {
 	var newli;
-	i = document.querySelector("#taskbox");
+	i = document.querySelector("#booki");
 	bl = document.querySelector("#book");
 	priorityValue= document.querySelector("#priority").value;
 	iText = i.value;
