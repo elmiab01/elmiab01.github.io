@@ -1,0 +1,26 @@
+h1 {
+  color:#abc;
+  text-size: 80px;
+  font-style: italic;
+}
+
+body {
+  background-color:red;
+}
+
+li.done {
+  text-decoration: line-through;
+}
+
+.High {
+  color:green;
+}
+
+.Medium {
+  color:blue;
+}
+
+.Low {
+  color:yellow;
+}
+  
