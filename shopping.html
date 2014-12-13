@@ -12,7 +12,7 @@
 
 
 <main>
-<ul id=busylist>
+<ul id=list>
 	</ul>
 </main>
 <aside>
@@ -52,7 +52,7 @@ restoreTask = function () {
 	allEntries = JSON.parse(localStorage.getItem('todoDatabase'))
 	for (i=0; i < allEntries.length; i++){
 	
-	bl = document.querySelector("#busylist");
+	bl = document.querySelector("#list");
 	li = document.createElement('li');
 	cb= document.createElement("input");
 	cb.type = 'checkbox';
@@ -67,7 +67,7 @@ restoreTask = function () {
 addTask= function() {
 	var newli;
 	i = document.querySelector("#taskbox");
-	bl = document.querySelector("#busylist");
+	bl = document.querySelector("#list");
 	priorityValue= document.querySelector("#priority").value;
 	iText = i.value;
 	li = document.createElement('li');
